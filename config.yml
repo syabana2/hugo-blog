@@ -1,4 +1,4 @@
-baseurl: "https://ashish.one/"
+baseurl: "https://rizkisyaban2.github.io/"
 languageCode: en-us
 title: syaban.site
 theme: paperMod
@@ -26,7 +26,7 @@ params:
     - Blogs
     - Gists
   images:
-    - "https://www.gravatar.com/avatar/dcb52889deff3e5017a18de40c57add8?s=200"
+    - "https://s.gravatar.com/avatar/d259662d25529f61c2aa84efdd3714ca?s=80"
   DateFormat: "January 2, 2006"
   defaultTheme: dark
   disableThemeToggle: false
