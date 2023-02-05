@@ -43,18 +43,18 @@ params:
   hideSummary: false
   showtoc: true
   tocopen: true
-  copyright: ashish
-  since: "2019"
+  copyright: syaban
+  since: "2023"
   highlightjs: true
   highlightjsstyle: github
-  UtterancesRepo: ashishtiwari1993/ashish.one
+  UtterancesRepo: syabana2/hugo-blog
   UtterancesIssueTerm: title
   UtterancesTheme: github-light
   toc: tocbot
   social:
     gravatar: atashish171@gmail.com
     twitter: _ashish_tiwari
-    github: ashishtiwari1993
+    github: syabana2
     linkedin: ashish-tiwari-a40a012b
   assets:
     favicon: favicon.png
