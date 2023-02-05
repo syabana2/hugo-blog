@@ -1,55 +1,123 @@
-baseURL: "https://zingy-pastelito-434c11.netlify.app"
+baseurl: "https://ashish.one/"
 languageCode: en-us
-title: R|S|A
-theme: PaperMod
-
+title: syaban.site
+theme: paperMod
+publishDir: docs
+googleAnalytics: UA-149424518-1
+enableEmoji: true
+enableGitInfo: true
+enableRobotsTXT: true
+canonifyURLs: true
+paginate: 5
+Taxonomies:
+  tag: tags
+  category: categories
+  series: series
+minify:
+  disableXML: true
+  minifyOutput: true
 params:
-  profileMode:
-    enabled: true
-    title: "<Title>" # optional default will be site title
-    subtitle: "This is subtitle"
-    imageUrl: "cover/test.jpeg" # optional
-    imageTitle: "<title of image as alt>" # optional
-    imageWidth: 120 # custom size
-    imageHeight: 120 # custom size
-    buttons:
-      - name: Archive
-        url: "/archive"
-      - name: Github
-        url: "https://github.com/"
-
-  homeInfoParams:
-    Title: "Hello Stranger"
-    Content: "Welcome to my documentation..."
-  socialIcons:
-    - name: facebook
-      url: "https://www.facebook.com"
-    - name: instagram
-      url: "https://www.instagram.com"
-    - name: github
-      url: "https://www.github.com"
-  cover:
-    linkFullImages: true
-  ShowBreadCrumbs: true
+  env: production
+  mainSections:
+    - post
+  author: Rizki Syaban
+  title: syaban.site
+  keyword:
+    - Blogs
+    - Gists
+  images:
+    - "https://www.gravatar.com/avatar/dcb52889deff3e5017a18de40c57add8?s=200"
+  DateFormat: "January 2, 2006"
+  defaultTheme: dark
+  disableThemeToggle: false
+  ShowFullTextinRSS: true
   ShowReadingTime: true
   ShowShareButtons: true
   ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: true
+  hidemeta: false
+  hideSummary: false
+  showtoc: true
+  tocopen: true
+  copyright: ashish
+  since: "2019"
+  highlightjs: true
+  highlightjsstyle: github
+  UtterancesRepo: ashishtiwari1993/ashish.one
+  UtterancesIssueTerm: title
+  UtterancesTheme: github-light
+  toc: tocbot
+  social:
+    gravatar: atashish171@gmail.com
+    twitter: _ashish_tiwari
+    github: ashishtiwari1993
+    linkedin: ashish-tiwari-a40a012b
+  assets:
+    favicon: favicon.png
+    favicon16x16: favicon.png
+    favicon32x32: favicon.png
+    apple_touch_icon: favicon.png
+    safari_pinned_tab: favicon.png
+  label:
+    text: Rizki Syaban
+    iconHeight: 35
+  profileMode:
+    enabled: false
+    imageUrl: "https://www.gravatar.com/avatar/dcb52889deff3e5017a18de40c57add8?s=200"
+  homeInfoParams:
+    Title: "Welcome Folks!"
+    Content: >
+      Hi, I’m Syaban, I hope you can find something interesting in my personal blog.
 
+  cover:
+    linkFullImages: false
+    hiddenInList: false
+    hiddenInSingle: false
+    responsiveImages: true
+  editPost:
+    URL: "https://github.com/syabana2/hugo-blog/tree/main/content"
+    Text: Suggest Changes
+    appendFilePath: true
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys:
+      - title
+      - permalink
+      - summary
+      - content
+  socialIcons:
+    - name: github
+      url: "https://github.com/syabana2"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/rizki-sya-ban-aryanto-889a19147/"
+    - name: instagram
+      url: "https://www.instagram.com/sybnarynto/"
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
 menu:
   main:
-    - identifier: posts
-      name: Posts
-      url: /posts/
-      weight: 5
-    - identifier: categories
-      name: Categories
+    - name: Categories
       url: /categories/
-      weight: 10
-    - identifier: tags
-      name: Tags
+      weight: -96
+    - name: Tags
       url: /tags/
-      weight: 20
-    - identifier: archives
+      weight: -95
+    - name: Search
+      url: /search/
+      weight: -92
+    - identifier: Archives
       name: Archives
       url: /archives/
-      weight: 30
+      weight: -90

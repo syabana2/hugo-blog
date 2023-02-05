@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>elastic-stacks on ashish.one</title>
+    <link>https://ashish.one/tags/elastic-stacks/</link>
+    <description>Recent content in elastic-stacks on ashish.one</description>
+    <image>
+      <url>https://www.gravatar.com/avatar/dcb52889deff3e5017a18de40c57add8?s=200</url>
+      <link>https://www.gravatar.com/avatar/dcb52889deff3e5017a18de40c57add8?s=200</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 08 Jun 2022 13:25:09 +0530</lastBuildDate><atom:link href="https://ashish.one/tags/elastic-stacks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Start a single node elastic cluster with Docker Compose</title>
+      <link>https://ashish.one/blogs/elastic-docker-compose/</link>
+      <pubDate>Wed, 08 Jun 2022 13:25:09 +0530</pubDate>
+      
+      <guid>https://ashish.one/blogs/elastic-docker-compose/</guid>
+      <description>Introduction In this gist, we will quickly try to spin Elastic stacks with Docker containers. We are going to use docker-compose. You can learn more about Docker &amp;amp; Docker Compose, Which will help you to understand the flow.
+Prerequisite Tested on the below configuration.
+docker:Docker version 20.10.16, build aa7e414 docker-compose:Docker version 20.10.16, build aa7e414 Cluster This setup will include
+Elasticsearch Kibana Logstash APM Setup Clone repo:
+git clone https://github.com/ashishtiwari1993/elastic-docker.git cd elastic-docker Make changes in .</description>
+      <content:encoded><![CDATA[<h1 id="introduction">Introduction</h1>
+<p>In this gist, we will quickly try to spin Elastic stacks with Docker containers. We are going to use <a href="https://docs.docker.com/compose/">docker-compose</a>. You can learn more about <a href="https://www.docker.com/">Docker</a> &amp; <a href="https://docs.docker.com/compose/">Docker Compose</a>, Which will help you to understand the flow.</p>
+<h1 id="prerequisite">Prerequisite</h1>
+<p>Tested on the below configuration.</p>
+<ul>
+<li>docker:<code>Docker version 20.10.16, build aa7e414</code></li>
+<li>docker-compose:<code>Docker version 20.10.16, build aa7e414</code></li>
+</ul>
+<h1 id="cluster">Cluster</h1>
+<p>This setup will include</p>
+<ul>
+<li>Elasticsearch</li>
+<li>Kibana</li>
+<li>Logstash</li>
+<li>APM</li>
+</ul>
+<h1 id="setup">Setup</h1>
+<p>Clone repo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git clone https://github.com/ashishtiwari1993/elastic-docker.git
+</span></span><span style="display:flex;"><span>cd elastic-docker
+</span></span></code></pre></div><p>Make changes in <code>.env</code> file.</p>
+<h1 id="start-the-cluster">Start the cluster</h1>
+<h2 id="start">Start</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>docker-compose up -d
+</span></span></code></pre></div><p>Just visit to <code>localhost:5601</code>. You should see a kibana login page.</p>
+<h2 id="stop">Stop</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>docker-compose down
+</span></span></code></pre></div><h2 id="stop-with-deleting-network-containers-and-volumes">Stop with deleting network, containers and volumes</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>docker-compose down -v
+</span></span></code></pre></div><h1 id="access-stacks">Access stacks</h1>
+<h2 id="elasticsearch">Elasticsearch</h2>
+<h3 id="access-via-curl-from-host-machine">Access via <code>curl</code> from host machine</h3>
+<h4 id="copy-cacrt-file">Copy <code>ca.crt</code> file</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>docker cp elastic-docker_es01_1:/usr/share/elasticsearch/config/certs/ca/ca.crt /tmp/
+</span></span></code></pre></div><h4 id="curl-command">Curl command</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl --cacert /tmp/ca.crt -u elastic:pass@123 https://localhost:9200
+</span></span></code></pre></div><h2 id="logstash">Logstash</h2>
+<ol>
+<li>You need to have pipeline configuration files on <code>LOGSTASH_PIPELINE_PATH</code> location. If there will be no file, Logstash will throw an error and get exit.</li>
+</ol>
+<h1 id="note">NOTE</h1>
+<blockquote>
+<p>You can simply comment other stacks which is not needed. For example if you want to just run Elasticsearch &amp; Kibana, Just comment the APM or other stack specification.</p>
+</blockquote>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>
