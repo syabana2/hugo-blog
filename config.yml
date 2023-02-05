@@ -2,7 +2,7 @@ baseurl: "https://rizkisyaban2.github.io/"
 languageCode: en-us
 title: syaban.site
 theme: PaperMod
-publishDir: docs
+publishDir: public
 googleAnalytics: UA-149424518-1
 enableEmoji: true
 enableGitInfo: true
